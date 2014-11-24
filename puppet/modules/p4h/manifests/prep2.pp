@@ -32,8 +32,12 @@ Bonus:
 Happy hacking!\n",
 	}
 
-	# XXX: write your code here...
-
+	user { inecas: ensure => present } ->
+        file { '/home/inecas': ensure => directory } ->
+        file { '/home/inecas/joke':
+          ensure => present,
+          content => 'A puppet master walks into a bar. The bartender asks: "everything in order today?"',
+        }
 }
 
 # vim: ts=8
