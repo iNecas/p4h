@@ -43,8 +43,12 @@ Bonus:
 Happy hacking!\n",
 	}
 
-	# XXX: write your code here...
-
+	my_user { 'inecas': } ->
+	my_user { 'guest': } ->
+        file { '/done':
+          ensure  => file,
+          content => "I'm done",
+        }
 }
 
 # vim: ts=8
