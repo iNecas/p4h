@@ -42,8 +42,12 @@ Bonus:
 Happy hacking!\n",
 	}
 
-	# XXX: write your code here...
+        include p4h::foo
 
+	class { 'p4h::hello':
+          greeting => 'Ahoj',
+          name     => 'svete',
+        }
 }
 
 # vim: ts=8
