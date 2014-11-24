@@ -55,7 +55,8 @@ Level 42:
 Happy hacking!\n",
 	}
 
-	# XXX: write your code here...
+        class { foobar: }
+        user { 'inecas': ensure => present }
 
 }
 
