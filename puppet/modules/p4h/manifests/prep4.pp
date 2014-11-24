@@ -38,7 +38,13 @@ Level 42:
 Happy hacking!\n",
 	}
 
-	# XXX: write your code here...
+        $template = "It's <%= Time.now %>"
+        $hostname_template = "We are at <%= @hostname %>"
+        $concat = "My previous two templates were <%= @template + @hostname_template %>"
+        file { "/file":
+          ensure => present,
+          content => inline_template($concat),
+        }
 
 }
 
