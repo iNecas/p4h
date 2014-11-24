@@ -47,7 +47,22 @@ Level 42:
 Happy hacking!\n",
 	}
 
-	# XXX: write your code here...
+        Exec { path => '/bin:/usr/bin' }
+
+        exec { 'echo Hello > /helloworld':
+          creates => '/helloworld',
+        } ~>
+        exec { 'echo Hello >> /helloworld2':
+          refreshonly => true,
+        }
+
+        exec { 'echo Hello > /helloworld3':
+          unless => 'test -e /helloworld3',
+        }
+
+        exec { 'echo "Good boy" > /helloworld4':
+          onlyif => 'rpm -q zsh',
+        }
 
 }
 
