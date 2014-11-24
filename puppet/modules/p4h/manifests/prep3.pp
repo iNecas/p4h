@@ -42,8 +42,12 @@ Hint:
 Happy hacking!\n",
 	}
 
-	# XXX: write your code here...
+	$my_name = 'inecas'
+        $my_message = "${my_name} writes some puppet"
 
+        notify { $my_name:
+          message => $my_message,
+        }
 }
 
 # vim: ts=8
