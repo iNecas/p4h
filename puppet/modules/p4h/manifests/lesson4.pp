@@ -44,7 +44,9 @@ Level 42:
 Happy hacking!\n",
 	}
 
-	# XXX: write your code here...
+	$names = ["Ivan", "Kat", "Nelca"]
+
+        say_hello { $names: }
 
 }
 
